@@ -1,6 +1,12 @@
-function Filters() {
+import FilterHouse from "./FilterHouse"
+import FilterName from "./FilterName"
+
+function Filters({handleName, searchName, handleHouse}) {
   return (
-    <div>Filters</div>
+    <form>
+      <FilterName handleName={handleName} searchName={searchName}/>
+      <FilterHouse handleHouse={handleHouse}/>
+    </form>
   )
 }
 

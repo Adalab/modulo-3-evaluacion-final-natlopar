@@ -8,12 +8,27 @@ import '../styles/App.scss';
 
 
 function App() {
+
   const [characters, setCharacters] = useState([]);
+  const [searchName, setSearchName] = useState('');
+  const [searchHouse, setSearchHouse] = useState ("Gryffindor");
+
   useEffect(() => {
-    getApi().then((cleanData) => {
+    getApi(searchHouse).then((cleanData) => {
       setCharacters(cleanData);
     });
-  }, []);
+  }, [searchHouse]);
+
+  const handleName = (value) => {
+    return setSearchName(value);
+  }
+
+  const handleHouse = (value) => {
+    return setSearchHouse(value);
+  }
+
+  const filteredCharacters = characters
+    .filter((char) => char.name.toLowerCase().includes(searchName.toLowerCase()))
 
   return (
     <div>
@@ -26,8 +41,12 @@ function App() {
             path="/"
             element={
               <>
-                <Filters />
-                <ListCharacters characters={characters}/>
+                <Filters 
+                handleName={handleName}
+                searchName={searchName}
+                handleHouse={handleHouse}
+                />
+                <ListCharacters characters={filteredCharacters}/>
               </>
             }
           />

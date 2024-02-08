@@ -1,22 +1,20 @@
-import { Link } from "react-router-dom"
-import CardCharacter from "./CardCharacter"
+import { Link } from 'react-router-dom';
+import CardCharacter from './CardCharacter';
 
-function ListCharacters({characters}) {
+function ListCharacters({ characters }) {
 
-    const renderList = () => {
-        return characters.map((char) => {
-            return <li key={char.id}>
-                <CardCharacter char={char}/>
-            </li>
-        })
-    }
+  const charactersSection = characters.map((char) => (
+      <section key={char.id}>
+        <Link to={`/character/${char.id}`}>
+          <li>
+            <CardCharacter char={char} />
+          </li>
+        </Link>
+      </section>
+    ));
+  
 
-  return (
-
-    <Link to={'/character/id del personaje'}>
-    <section><ul>{renderList()}</ul></section>
-    </Link>
-  )
+  return <ul>{charactersSection}</ul>;
 }
 
-export default ListCharacters
+export default ListCharacters;
