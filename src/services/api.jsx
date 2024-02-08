@@ -1,11 +1,21 @@
-const callToApi =(dataCard)=>{
-    return fetch('https://dev.adalab.es/api/projectCard', {
-        method: "POST",
-        body: JSON.stringify(dataCard),
-        headers: { "Content-type": "application/json" },
-      })    
+const getApi =()=>{
+    return fetch('https://hp-api.onrender.com/api/characters/house/' + 'gryffindor') 
       .then((response)=> response.json())
-      
+      .then((data)=>{
+        const cleanData = data.map((char) => {
+          return {
+            id: char.id, 
+            name: char.name, 
+            alternate_names: char.alternate_names, 
+            species: char.species, 
+            gender: char.gender, 
+            alive: char.alive, 
+            image: char.image, 
+            house: char.house
+          };
+        });
+        return cleanData;
+      })
 };
 
-export default callToApi; 
+export default getApi; 

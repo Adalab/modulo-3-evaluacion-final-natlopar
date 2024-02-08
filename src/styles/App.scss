@@ -1,1 +1,13 @@
 @import 'core/reset';
+
+.article {
+    &__img{
+        width: 150px;
+    }
+    &__title{
+        font-size: 1.7rem;
+    }
+    &__text{
+        font-size: 1.5rem;
+    }
+}
