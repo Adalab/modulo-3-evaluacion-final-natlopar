@@ -1,21 +1,22 @@
 import { Link } from 'react-router-dom';
 import CardCharacter from './CardCharacter';
 import PropTypes from 'prop-types';
+import '../styles/layout/list.scss';
 
 function ListCharacters({ characters }) {
 
   const charactersSection = characters.map((char) => (
-      <section key={char.id}>
+      <li key={char.id} className='list__card'>
         <Link to={`/character/${char.id}`} className='link'>
-          <li>
+          
             <CardCharacter char={char} />
-          </li>
+         
         </Link>
-      </section>
+      </li>
     ));
   
 
-  return <ul>{charactersSection}</ul>;
+  return <ul className='list'>{charactersSection}</ul>;
 }
 
 ListCharacters.propTypes = {

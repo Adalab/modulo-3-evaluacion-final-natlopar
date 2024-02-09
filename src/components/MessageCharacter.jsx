@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 function MessageCharacter() {
   return (
-    <div>
+    <div className='window'>
       <Link to={'/'} className="link">
         <i className="fa-solid fa-circle-arrow-left">Volver</i>
       </Link>

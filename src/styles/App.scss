@@ -1,13 +1,37 @@
 @import 'core/reset';
+.window{
+  height: 100vh;
+}
+.bodyApp {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100vw;
 
+  &__header {
+    display: flex;
+    align-items: center;
+   
+    height: 20vh;
 
-.header {
-  font-size: 3rem;
- 
-  background-image: url(/src/images/back.jpg);
-  background-color: rgb(30, 66, 73);
-  background-repeat: no-repeat;
-  background-size: cover;
+    &--title {
+      width: 250px;
+      @media (min-width: 768px){
+        width: 400px;
+      }
+    }
+    &--img {
+      width: 100px;
+      border-radius: 50%;
+      padding: 5px;
+    }
+  }
+  &__main{
+   height: 80%;
+    background: rgb(232,187,79);
+    background: linear-gradient(0deg, rgba(232,187,79,1) 26%, rgba(237,185,128,1) 70%, rgba(255,255,255,1) 100%);
+  }
 }
 
 li {
@@ -17,5 +41,3 @@ li {
 .link {
   text-decoration: none;
 }
-
-

@@ -66,7 +66,7 @@ function DetailCharacter({ characters }) {
             {findCharacter.alive ? (
               <i className="fa-solid fa-heart-pulse heart"></i>
             ) : (
-              <i className="fa-solid fa-skull"></i>
+              <i className="fa-solid fa-skull skull"></i>
             )}
           </p>
           <div>

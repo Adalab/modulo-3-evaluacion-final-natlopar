@@ -7,6 +7,8 @@ import { useEffect, useState } from 'react';
 import '../styles/App.scss';
 import MessageCharacter from './MessageCharacter';
 import local from '../services/localStorage';
+import title from '../images/title.jpg'
+import back from '../images/back.jpg'
 
 
 
@@ -63,53 +65,55 @@ function App() {
   
     return 0;
   }) : filteredCharacters;
+
   const reset = () => {
     setSearchHouse('Gryffindor');
     setSearchName('');
     setSearchGender('All');
+    setIsChecked(false);
   };
-
-
   return (
-    <div className='body'>
-      <header className='header'>
-        <h1 className='header_title'>HARRY POTTER</h1>
+    <div className='bodyApp'>
+      <header className='bodyApp__header'>
+        <img src={title} alt ="title" className='bodyApp__header--title' />
+        <img src={back} alt="imagen castillo" className='bodyApp__header--img'/>
       </header>
-      <main>
-        
+      <main className='bodyApp__main'>
         <Routes>
           <Route
             path="/"
             element={
               <>
-                <Filters
-                  handleName={handleName}
-                  searchName={searchName}
-                  handleHouse={handleHouse}
-                  reset={reset}
-                  searchHouse={searchHouse}
-                  handleGender={handleGender}
-                  searchGender={searchGender}
-                  handleSort={handleSort}
-                  isChecked={isChecked}
-                />
-               
+                <div className="filterSection">
+                  <Filters
+                    handleName={handleName}
+                    searchName={searchName}
+                    handleHouse={handleHouse}
+                    reset={reset}
+                    searchHouse={searchHouse}
+                    handleGender={handleGender}
+                    searchGender={searchGender}
+                    handleSort={handleSort}
+                    isChecked={isChecked}
+                  />
+                </div>
                 {filteredCharacters.length === 0 ? (`${searchName} not found. Please try with another name`) : (<ListCharacters characters={sortedCharacters} />)}
               </>
             }
           />
-            <Route path="/character/*" element={<MessageCharacter />} />
           <Route
             path="/character/:id"
             element={<DetailCharacter characters={characters} />}
           />
-          <Route path="*" element={<MessageCharacter />} />
-          
+          <Route
+            path="*"
+            element={<MessageCharacter />}
+          />
         </Routes>
       </main>
     </div>
   );
-}
+  
+          }  
 
 export default App;
-
