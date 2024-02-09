@@ -18,19 +18,22 @@
         width: 280px;
         font-size: 1.8rem;
         gap: 50px;
-        // &--house {
-        // //     width: 100px;
-        // // }
+        &--house {
+            width: 30px;
+        }
         &--total {
             background-color: rgb(189, 134, 4);
             color: white;
             text-align: center;
             border-radius: 15px;
             padding: 5px;
+            box-shadow: -8px 9px 5px 0px rgba(0,0,0,0.56);
         }
         &--img {
             width: 150px;
             border-radius: 15px;
+            border: 3px solid rgb(189, 134, 4);
+            box-shadow: -8px 9px 5px 0px rgba(0,0,0,0.56);
             
         }
     }
@@ -43,6 +46,29 @@
 
 .gryfBack {
     background-image: url(/src/images/gryf.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+.slytherin {
+    background-image: url(/src/images/slytherin.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+
+.raven {
+    background-image: url(/src/images/raven.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+
+.huff {
+    background-image: url(/src/images/huff.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;

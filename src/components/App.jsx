@@ -71,8 +71,7 @@ function App() {
                   reset={reset}
                   searchHouse={searchHouse}
                 />
-                {filteredCharacters.length === 0 ? (`${searchName} not found. Please try with another name`) : (<ListCharacters characters={orderedCharacters} />
-                )}
+                {filteredCharacters.length === 0 ? (`${searchName} not found. Please try with another name`) : (<ListCharacters characters={orderedCharacters} />)}
               </>
             }
           />

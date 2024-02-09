@@ -1,10 +1,17 @@
 import photo from '../images/default.jpg'
 import PropTypes from 'prop-types';
+import witch from '../images/maga.jpg'
 
 function CardCharacter({char}) {
 
     const renderImage = (char) => {
-        return char.image === '' ? photo : char.image 
+      if (char.image === '' && char.gender === 'male'){
+        return photo
+      } else if (char.image === '' && char.gender === 'female'){
+        return witch
+      } else {
+        return char.image
+      }
     }
 
   return (
