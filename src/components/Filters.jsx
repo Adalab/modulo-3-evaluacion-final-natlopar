@@ -1,12 +1,20 @@
 import FilterHouse from "./FilterHouse"
 import FilterName from "./FilterName"
 
-function Filters({handleName, searchName, handleHouse}) {
+function Filters({handleName, searchName, handleHouse, reset, searchHouse}) {
+
+const handleClick =()=>{
+  reset();
+}
+
   return (
-    <form>
+    <section className="form">
+    <form className="form__inputs">
       <FilterName handleName={handleName} searchName={searchName}/>
-      <FilterHouse handleHouse={handleHouse}/>
+      <FilterHouse handleHouse={handleHouse} searchHouse={searchHouse}/>
     </form>
+    <button className="form__btn" onClick={handleClick}>Reset</button>
+    </section>
   )
 }
 
