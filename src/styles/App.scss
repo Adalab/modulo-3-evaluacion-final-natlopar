@@ -1,7 +1,21 @@
 @import 'core/reset';
 .window{
   height: 100vh;
+  width: 100%;
 }
+.divNotfound{
+  width: 100vw;
+  height: 100vh;
+  margin: 0 auto;
+}
+
+.notFound{
+  font-size: 2rem;
+  font-weight: bold;
+  color: red;
+ text-align: center;
+}
+
 .bodyApp {
   display: flex;
   flex-direction: column;

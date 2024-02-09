@@ -97,7 +97,7 @@ function App() {
                     isChecked={isChecked}
                   />
                 </div>
-                {filteredCharacters.length === 0 ? (`${searchName} not found. Please try with another name`) : (<ListCharacters characters={sortedCharacters} />)}
+                {filteredCharacters.length === 0 ? (<div className='divNotfound'><p className='notFound'>{`${searchName} not found. Please try with another name`}</p></div>) : (<ListCharacters characters={sortedCharacters} />)}
               </>
             }
           />
