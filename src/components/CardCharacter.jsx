@@ -1,6 +1,7 @@
 import photo from '../images/default.jpg'
 import PropTypes from 'prop-types';
 import witch from '../images/maga.jpg'
+import '../styles/layout/card.scss';
 
 function CardCharacter({char}) {
 

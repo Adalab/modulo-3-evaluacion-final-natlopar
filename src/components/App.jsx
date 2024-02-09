@@ -14,6 +14,7 @@ function App() {
   const [characters, setCharacters] = useState(local.get('characters', []));
   const [searchName, setSearchName] = useState('');
   const [searchHouse, setSearchHouse] = useState('Gryffindor');
+  const [searchGender, setSearchGender] = useState('All');
 
   useEffect(() => {
     getApi(searchHouse).then((cleanData) => {
@@ -29,14 +30,23 @@ function App() {
   const handleHouse = (value) => {
     return setSearchHouse(value);
   };
-
-  const filteredCharacters = characters.filter((char) =>
+  
+  const handleGender =(value) => {
+    setSearchGender(value);
+  }
+  const filteredCharacters = characters
+    .filter((char) =>
     char.name.toLowerCase().includes(searchName.toLowerCase())
-  );
+    )
+    .filter((char) => {
+      return searchGender === 'All' ? true : char.gender.toLowerCase().includes(searchGender.toLowerCase())
 
+    }
+    )
+    
   const orderedCharacters = filteredCharacters.sort((a, b) => {
-    const nameA = a.name.toUpperCase(); // ignore upper and lowercase
-    const nameB = b.name.toUpperCase(); // ignore upper and lowercase
+    const nameA = a.name.toUpperCase(); 
+    const nameB = b.name.toUpperCase();
     if (nameA < nameB) {
       return 1;
     }
@@ -51,8 +61,10 @@ function App() {
   const reset = () => {
     setSearchHouse('Gryffindor');
     setSearchName('');
+    setSearchGender('All');
   };
 
+  
   return (
     <div>
       <header className='header'>
@@ -70,7 +82,10 @@ function App() {
                   handleHouse={handleHouse}
                   reset={reset}
                   searchHouse={searchHouse}
+                  handleGender={handleGender}
+                  searchGender={searchGender}
                 />
+                <input type='checkbox' onChange={handleSort}>Sort</input>
                 {filteredCharacters.length === 0 ? (`${searchName} not found. Please try with another name`) : (<ListCharacters characters={orderedCharacters} />)}
               </>
             }
@@ -89,6 +104,4 @@ function App() {
 }
 
 export default App;
-//icono vida <i class="fa-solid fa-heart-pulse"></i>  //
-//muerte  <i class="fa-solid fa-skull"></i> //
-// volver <i class="fa-solid fa-circle-arrow-left"></i>  //
+

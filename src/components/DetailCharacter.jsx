@@ -1,4 +1,5 @@
 import { Link, useParams } from 'react-router-dom';
+import '../styles/layout/detail.scss';
 import photo from '../images/default.jpg';
 import PropTypes from 'prop-types';
 import gryf from '../images/gryf.png';

@@ -1,12 +1,13 @@
 @import 'core/reset';
-@import 'layout/filters';
-@import 'layout/card';
-@import 'layout/detail';
 
-.header{
-    font-size: 3rem;
+.header {
+  font-size: 3rem;
 }
 
 li {
-    list-style: none;
+  list-style: none;
+}
+
+.link {
+  text-decoration: none;
 }
