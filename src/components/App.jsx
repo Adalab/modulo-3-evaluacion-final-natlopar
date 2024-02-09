@@ -60,6 +60,7 @@ function App() {
               </>
             }
           />
+            <Route path="/character/*" element={<MessageCharacter />} />
           <Route
             path="/character/:id"
             element={<DetailCharacter characters={characters} />}
