@@ -34,6 +34,20 @@ function App() {
     char.name.toLowerCase().includes(searchName.toLowerCase())
   );
 
+  const orderedCharacters = filteredCharacters.sort((a, b) => {
+    const nameA = a.name.toUpperCase(); // ignore upper and lowercase
+    const nameB = b.name.toUpperCase(); // ignore upper and lowercase
+    if (nameA < nameB) {
+      return 1;
+    }
+    if (nameA > nameB) {
+      return -1;
+    }
+  
+    return 0;
+  });
+
+
   const reset = () => {
     setSearchHouse('Gryffindor');
     setSearchName('');
@@ -57,7 +71,7 @@ function App() {
                   reset={reset}
                   searchHouse={searchHouse}
                 />
-                {filteredCharacters.length === 0 ? (`${searchName} not found. Please try with another name`) : (<ListCharacters characters={filteredCharacters} />
+                {filteredCharacters.length === 0 ? (`${searchName} not found. Please try with another name`) : (<ListCharacters characters={orderedCharacters} />
                 )}
               </>
             }
@@ -68,6 +82,7 @@ function App() {
             element={<DetailCharacter characters={characters} />}
           />
           <Route path="*" element={<MessageCharacter />} />
+          
         </Routes>
       </main>
     </div>
