@@ -3,9 +3,10 @@ import FilterName from "./FilterName"
 import PropTypes from 'prop-types';
 import '../styles/layout/filters.scss';
 import FilterGender from "./FilterGender";
+import Sort from "./Sort";
 
 
-function Filters({handleName, searchName, handleHouse, reset, searchHouse, handleGender, searchGender}) {
+function Filters({handleSort, isChecked, handleName, searchName, handleHouse, reset, searchHouse, handleGender, searchGender}) {
 
 const handleClick =()=>{
   reset();
@@ -17,7 +18,10 @@ const handleClick =()=>{
       <FilterName handleName={handleName} searchName={searchName}/>
       <FilterHouse handleHouse={handleHouse} searchHouse={searchHouse}/>
       <FilterGender handleGender={handleGender} searchGender={searchGender}/>
+      <Sort handleSort= {handleSort} isChecked={isChecked}/>
+   
     </form>
+    
     <button className="form__btn" onClick={handleClick}>Reset</button>
     </section>
   )
@@ -32,6 +36,7 @@ Filters.propTypes = {
   reset: PropTypes.func,
   handleGender: PropTypes.func,
   searchGender: PropTypes.string, 
+  handleSort: PropTypes.func,
 }
 
 

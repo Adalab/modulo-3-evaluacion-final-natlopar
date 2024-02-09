@@ -1,7 +1,13 @@
 @import 'core/reset';
 
+
 .header {
   font-size: 3rem;
+ 
+  background-image: url(/src/images/back.jpg);
+  background-color: rgb(30, 66, 73);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 li {
@@ -11,3 +17,5 @@ li {
 .link {
   text-decoration: none;
 }
+
+

@@ -10,11 +10,13 @@ import local from '../services/localStorage';
 
 
 
+
 function App() {
   const [characters, setCharacters] = useState(local.get('characters', []));
   const [searchName, setSearchName] = useState('');
   const [searchHouse, setSearchHouse] = useState('Gryffindor');
   const [searchGender, setSearchGender] = useState('All');
+  const [isChecked, setIsChecked] = useState (false);
 
   useEffect(() => {
     getApi(searchHouse).then((cleanData) => {
@@ -44,33 +46,37 @@ function App() {
     }
     )
     
-  const orderedCharacters = filteredCharacters.sort((a, b) => {
+   
+  const handleSort =(checked)=>{
+    setIsChecked(checked);
+  }
+
+  let sortedCharacters = isChecked ? filteredCharacters.sort((a, b) => {
     const nameA = a.name.toUpperCase(); 
     const nameB = b.name.toUpperCase();
     if (nameA < nameB) {
-      return 1;
+      return -1;
     }
     if (nameA > nameB) {
-      return -1;
+      return 1;
     }
   
     return 0;
-  });
-
-
+  }) : filteredCharacters;
   const reset = () => {
     setSearchHouse('Gryffindor');
     setSearchName('');
     setSearchGender('All');
   };
 
-  
+
   return (
-    <div>
+    <div className='body'>
       <header className='header'>
         <h1 className='header_title'>HARRY POTTER</h1>
       </header>
       <main>
+        
         <Routes>
           <Route
             path="/"
@@ -84,9 +90,11 @@ function App() {
                   searchHouse={searchHouse}
                   handleGender={handleGender}
                   searchGender={searchGender}
+                  handleSort={handleSort}
+                  isChecked={isChecked}
                 />
-                <input type='checkbox' onChange={handleSort}>Sort</input>
-                {filteredCharacters.length === 0 ? (`${searchName} not found. Please try with another name`) : (<ListCharacters characters={orderedCharacters} />)}
+               
+                {filteredCharacters.length === 0 ? (`${searchName} not found. Please try with another name`) : (<ListCharacters characters={sortedCharacters} />)}
               </>
             }
           />
