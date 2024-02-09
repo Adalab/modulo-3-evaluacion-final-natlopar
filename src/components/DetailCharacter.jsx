@@ -1,26 +1,41 @@
 import { Link, useParams } from 'react-router-dom';
 import photo from '../images/default.jpg';
+import PropTypes from 'prop-types';
+import gryf from '../images/gryf.png';
+
 
 
 function DetailCharacter({ characters }) {
 
   const { id } = useParams();
   const findCharacter = characters.find((char) => char.id === id);
-  const renderImage = (findCharacter) => {
+  const renderImage = () => {
     return findCharacter.image === '' ? photo : findCharacter.image;
   };
-
+  // const renderHouse = () => {
+  //   if (findCharacter.house === 'Gryffindor'){
+  //     return gryf
+  //   }
+  // }
+ 
+  const classBackground =()=> {
+    if (findCharacter.house === 'Gryffindor') {
+      return 'gryfBack'
+    }
+  }
 
   return (
     <section className="detail">
       <Link to={'/'} className="detail__link">
         <i className="fa-solid fa-circle-arrow-left detail__link--icon"></i>
       </Link>
-      <article className='detail__card'>
+      <article className={`detail__card ${classBackground()}`}>
+        
         <img className='detail__card--img'
-          src={renderImage(findCharacter)}
+          src={renderImage()}
           alt={`Imagen de ${findCharacter.name}`}
         />
+        <div className='detail__card--total'>
         <h3 className='detail__card--titl'>{findCharacter.name}</h3>
         <p className='detail__card--text'>Species: {findCharacter.species}</p>
         <p className='detail__card--text'>Gender: {findCharacter.gender}</p>
@@ -40,9 +55,17 @@ function DetailCharacter({ characters }) {
             ))}
           </ul>
         </div>
+        {/* <img src={renderHouse()}
+          alt={`Imagen de ${findCharacter.house}`} className='detail__card--house'></img> */}
+          </div>
       </article>
     </section>
   );
+}
+
+
+DetailCharacter.propTypes = {
+  characters: PropTypes.object
 }
 
 export default DetailCharacter;
