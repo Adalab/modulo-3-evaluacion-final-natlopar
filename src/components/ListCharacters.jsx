@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import CardCharacter from './CardCharacter';
+import PropTypes from 'prop-types';
 
 function ListCharacters({ characters }) {
 
@@ -15,6 +16,10 @@ function ListCharacters({ characters }) {
   
 
   return <ul>{charactersSection}</ul>;
+}
+
+ListCharacters.propTypes = {
+  characters: PropTypes.array
 }
 
 export default ListCharacters;

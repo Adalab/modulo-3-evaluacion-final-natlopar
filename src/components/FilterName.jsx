@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 function FilterName({ handleName, searchName }) {
 
 
@@ -20,6 +22,12 @@ function FilterName({ handleName, searchName }) {
       />
     </div>
   );
+}
+
+
+FilterName.propTypes = {
+  handleName: PropTypes.func,
+  searchName: PropTypes.string
 }
 
 export default FilterName;

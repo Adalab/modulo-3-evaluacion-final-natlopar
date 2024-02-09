@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 function FilterHouse({handleHouse, searchHouse}) {
 
 
@@ -12,6 +14,11 @@ function FilterHouse({handleHouse, searchHouse}) {
     </select>
     </div>
   )
+}
+
+FilterHouse.propTypes = {
+  handleHouse: PropTypes.func,
+  searchHouse: PropTypes.string
 }
 
 export default FilterHouse

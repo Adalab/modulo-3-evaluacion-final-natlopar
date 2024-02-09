@@ -1,6 +1,7 @@
 import { Link, useParams } from 'react-router-dom';
 import photo from '../images/default.jpg';
 import MessageCharacter from './MessageCharacter';
+import PropTypes from 'prop-types';
 
 function DetailCharacter({ characters }) {
   const { id } = useParams();
@@ -56,5 +57,10 @@ function DetailCharacter({ characters }) {
     </section>
   );
 }
+
+DetailCharacter.propTypes = {
+  characters: PropTypes.array
+}
+
 
 export default DetailCharacter;

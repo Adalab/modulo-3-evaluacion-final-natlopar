@@ -1,5 +1,7 @@
 import FilterHouse from "./FilterHouse"
 import FilterName from "./FilterName"
+import PropTypes from 'prop-types';
+
 
 function Filters({handleName, searchName, handleHouse, reset, searchHouse}) {
 
@@ -17,5 +19,15 @@ const handleClick =()=>{
     </section>
   )
 }
+
+
+Filters.propTypes = {
+  handleName: PropTypes.func,
+  searchName: PropTypes.string,
+  handleHouse: PropTypes.func,
+  searchHouse: PropTypes.string, 
+  reset: PropTypes.func
+}
+
 
 export default Filters

@@ -1,4 +1,4 @@
-import { Routes, Route, Link } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import Filters from './Filters';
 import ListCharacters from './ListCharacters';
 import DetailCharacter from './DetailCharacter';
@@ -7,6 +7,8 @@ import { useEffect, useState } from 'react';
 import '../styles/App.scss';
 import MessageCharacter from './MessageCharacter';
 import local from '../services/localStorage';
+
+
 
 function App() {
   const [characters, setCharacters] = useState(local.get('characters', []));

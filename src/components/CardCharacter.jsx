@@ -1,4 +1,6 @@
 import photo from '../images/default.jpg'
+import PropTypes from 'prop-types';
+
 function CardCharacter({char}) {
 
     const renderImage = (char) => {
@@ -15,6 +17,10 @@ function CardCharacter({char}) {
 
     </article>
   )
+}
+
+CardCharacter.propTypes = {
+  char: PropTypes.object
 }
 
 export default CardCharacter
