@@ -1,27 +1,24 @@
 .article {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    align-items: center;
-    gap: 10px;
-  
-  
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  gap: 10px;
+
   &__img {
     width: 120px;
     height: 200px;
     border-radius: 15px;
     border: 3px solid rgb(189, 134, 4);
-    box-shadow: -8px 9px 5px 0px rgba(0,0,0,0.56);
+    box-shadow: -8px 9px 5px 0px rgba(0, 0, 0, 0.56);
     object-fit: cover;
-   
     &:hover {
-        transform: scale(1.1);
-        transition: transform 0.3s ease;
+      transform: scale(1.1);
+      transition: transform 0.3s ease;
     }
   }
-
   &__text {
-    color:  brown;
+    color: brown;
     font-size: 1.5rem;
     &--title {
       font-size: 1.7rem;

@@ -1,15 +1,26 @@
 .form {
-    width: 100%;
-    
+  width: 100%;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 1.5rem;
+  color: brown;
+  font-weight: bold;
+
+  &__inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding-left: 10px;
+  }
+  &__btn {
+    margin: 20px 10px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 1.5rem;
-    &__inputs{
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
-        margin: 10px;
-    }
-    &__btn{
-        font-size: 1.5rem;
-        margin: 10px;
-    }
+    color: brown;
+    font-weight: bold;
+    background-color: azure;
+    padding: 5px;
+    border: 2px solid rgb(189, 134, 4);
+    box-shadow: -4px 4px 5px 0px rgba(0, 0, 0, 0.56);
+    border-radius: 15px;
+  }
 }

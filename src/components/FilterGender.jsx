@@ -4,7 +4,7 @@ function FilterGender({handleGender, searchGender}) {
   return (
     <div>
         <label htmlFor="gender">Search by gender:</label>
-        <select name="gender" id="gender" onChange={(e) => handleGender(e.target.value)} value={searchGender}>
+        <select name="gender" id="gender" className="input" onChange={(e) => handleGender(e.target.value)} value={searchGender}>
             <option value="All">All</option>
             <option value="Female">Female</option>
             <option value="Male">Male</option>
