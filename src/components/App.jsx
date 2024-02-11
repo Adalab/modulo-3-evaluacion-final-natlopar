@@ -7,18 +7,16 @@ import { useEffect, useState } from 'react';
 import '../styles/App.scss';
 import MessageCharacter from './MessageCharacter';
 import local from '../services/localStorage';
-import title from '../images/title.jpg'
-import back from '../images/back.jpg'
-import flag from '../images/banderas.jpg'
-
-
+import title from '../images/title.jpg';
+import back from '../images/back.jpg';
+import flag from '../images/banderas.jpg';
 
 function App() {
   const [characters, setCharacters] = useState(local.get('characters', []));
   const [searchName, setSearchName] = useState('');
   const [searchHouse, setSearchHouse] = useState('Gryffindor');
   const [searchGender, setSearchGender] = useState('All');
-  const [isChecked, setIsChecked] = useState (false);
+  const [isChecked, setIsChecked] = useState(false);
 
   useEffect(() => {
     getApi(searchHouse).then((cleanData) => {
@@ -34,37 +32,39 @@ function App() {
   const handleHouse = (value) => {
     return setSearchHouse(value);
   };
-  
-  const handleGender =(value) => {
+
+  const handleGender = (value) => {
     setSearchGender(value);
-  }
+  };
+  
   const filteredCharacters = characters
     .filter((char) =>
-    char.name.toLowerCase().includes(searchName.toLowerCase())
+      char.name.toLowerCase().includes(searchName.toLowerCase())
     )
     .filter((char) => {
-      return searchGender === 'All' ? true : char.gender.toLowerCase() === (searchGender.toLowerCase())
+      return searchGender === 'All'
+        ? true
+        : char.gender.toLowerCase() === searchGender.toLowerCase();
+    });
 
-    }
-    )
-    
-   
-  const handleSort =(checked)=>{
+  const handleSort = (checked) => {
     setIsChecked(checked);
-  }
+  };
 
-  let sortedCharacters = isChecked ? filteredCharacters.sort((a, b) => {
-    const nameA = a.name.toUpperCase(); 
-    const nameB = b.name.toUpperCase();
-    if (nameA < nameB) {
-      return -1;
-    }
-    if (nameA > nameB) {
-      return 1;
-    }
-  
-    return 0;
-  }) : filteredCharacters;
+  let sortedCharacters = isChecked
+    ? filteredCharacters.sort((a, b) => {
+        const nameA = a.name.toUpperCase();
+        const nameB = b.name.toUpperCase();
+        if (nameA < nameB) {
+          return -1;
+        }
+        if (nameA > nameB) {
+          return 1;
+        }
+
+        return 0;
+      })
+    : filteredCharacters;
 
   const reset = () => {
     setSearchHouse('Gryffindor');
@@ -73,13 +73,21 @@ function App() {
     setIsChecked(false);
   };
   return (
-    <div className='bodyApp'>
-      <header className='bodyApp__header'>
-        <img src={flag} alt="imagen banderas" className='bodyApp__header--img'/>
-        <img src={title} alt ="title" className='bodyApp__header--title' />
-        <img src={back} alt="imagen castillo" className='bodyApp__header--img'/>
+    <div className="bodyApp">
+      <header className="bodyApp__header">
+        <img
+          src={flag}
+          alt="imagen banderas"
+          className="bodyApp__header--img"
+        />
+        <img src={title} alt="title" className="bodyApp__header--title" />
+        <img
+          src={back}
+          alt="imagen castillo"
+          className="bodyApp__header--img"
+        />
       </header>
-      <main className='bodyApp__main'>
+      <main className="bodyApp__main">
         <Routes>
           <Route
             path="/"
@@ -98,7 +106,13 @@ function App() {
                     isChecked={isChecked}
                   />
                 </div>
-                {filteredCharacters.length === 0 ? (<div className='divNotfound'><p className='notFound'>{`${searchName} not found. Please try with another name`}</p></div>) : (<ListCharacters characters={sortedCharacters} />)}
+                {filteredCharacters.length === 0 ? (
+                  <div className="divNotfound">
+                    <p className="notFound">{`${searchName} not found. Please try with another name`}</p>
+                  </div>
+                ) : (
+                  <ListCharacters characters={sortedCharacters} />
+                )}
               </>
             }
           />
@@ -106,15 +120,11 @@ function App() {
             path="/character/:id"
             element={<DetailCharacter characters={characters} />}
           />
-          <Route
-            path="*"
-            element={<MessageCharacter />}
-          />
+          <Route path="*" element={<MessageCharacter />} />
         </Routes>
       </main>
     </div>
   );
-  
-          }  
+}
 
 export default App;

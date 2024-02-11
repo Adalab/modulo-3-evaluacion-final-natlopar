@@ -22,18 +22,15 @@
   align-items: center;
   flex-wrap: wrap;
   width: 100vw;
- 
   &__header {
     display: flex;
     align-items: center;
     justify-content: center;
     padding-top: 10px;
-
     @media (min-width: 768px) {
       width: 400px;
       gap: 75px;
     }
-
     &--title {
       width: 230px;
 
@@ -72,15 +69,10 @@ li {
   text-decoration: none;
 }
 
-
-
-
 .input {
   display: flex;
   gap: 5px;
-
- 
-  &__input{
+  &__input {
     padding-left: 5px;
     width: 140px;
     border: 1px brown solid;
@@ -88,25 +80,18 @@ li {
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 1.5rem;
     font-weight: 700;
-  
-
-
     &:checked {
       accent-color: brown;
     }
-    &::placeholder{
+    &::placeholder {
       padding: 2px;
       font-style: italic;
       font-family: Georgia, 'Times New Roman', Times, serif;
       font-weight: 100;
       color: grey;
-      @media (min-width: 768px){
+      @media (min-width: 768px) {
         font-size: 1.8rem;
       }
-
     }
-   
-
   }
-
 }

@@ -1,99 +1,93 @@
-.detail{
+.detail {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  margin-top: 50px;
+
+  &__link {
+    text-decoration: none;
+    &--icon {
+      color: rgb(189, 134, 4);
+      font-size: 24px;
+      text-shadow: -4px 4px 2px rgba(0, 0, 0, 0.6);
+    }
+  }
+  &__card {
     display: flex;
     flex-direction: column;
-    gap: 20px;
     align-items: center;
-    width: 100vw;
-    height: 100vh;
-    margin-top: 50px;
+    width: 280px;
+    font-size: 1.8rem;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    gap: 50px;
 
-    &__link{
-        text-decoration: none;
-        &--icon{
-            color:  rgb(189, 134, 4);
-            font-size: 24px;
-            text-shadow: -4px 4px 2px rgba(0,0,0,0.6);
-        }
+    &--house {
+      width: 30px;
     }
-    &__card{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 280px;
-        font-size: 1.8rem;
-        font-family: Georgia, 'Times New Roman', Times, serif;
-        gap: 50px;
-      
-        &--house {
-            width: 30px;
-        }
-        &--total {
-            background-color: rgb(189, 134, 4);
-            color: white;
-            text-align: center;
-            border-radius: 15px;
-            padding: 5px;
-            box-shadow: -8px 9px 5px 0px rgba(0,0,0,0.56);
-           
-        }
-        &--img {
-            width: 150px;
-            border-radius: 15px;
-            border: 3px solid rgb(189, 134, 4);
-            box-shadow: -8px 9px 5px 0px rgba(0,0,0,0.56);
-            
-        }
-        &--title{
-            text-shadow: -1px 2px 2px rgba(0,0,0,0.6);
-            margin-bottom: 15px;
-            border-bottom: 4px solid;
-            padding: 6px;
-            box-shadow: -4px 9px 5px 0px rgba(0,0,0,0.56);
-            margin-bottom: 20px;
-        }
-        &--p{
-            margin-bottom: 10px;
-        }
-        &--text{
-            margin-bottom: 7px;
-        }
-      
+    &--total {
+      background-color: rgb(189, 134, 4);
+      color: white;
+      text-align: center;
+      border-radius: 15px;
+      padding: 5px;
+      box-shadow: -8px 9px 5px 0px rgba(0, 0, 0, 0.56);
     }
+    &--img {
+      width: 150px;
+      border-radius: 15px;
+      border: 3px solid rgb(189, 134, 4);
+      box-shadow: -8px 9px 5px 0px rgba(0, 0, 0, 0.56);
+    }
+    &--title {
+      text-shadow: -1px 2px 2px rgba(0, 0, 0, 0.6);
+      margin-bottom: 15px;
+      border-bottom: 4px solid;
+      padding: 6px;
+      box-shadow: -4px 9px 5px 0px rgba(0, 0, 0, 0.56);
+      margin-bottom: 20px;
+    }
+    &--p {
+      margin-bottom: 10px;
+    }
+    &--text {
+      margin-bottom: 7px;
+    }
+  }
 }
-
 
 .heart {
-    color: red;
+  color: red;
 }
 .skull {
-    color: black;
+  color: black;
 }
 .gryfBack {
-    background-image: url(/src/images/gryf.png);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
+  background-image: url(/src/images/gryf.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
 }
 
 .slytherin {
-    background-image: url(/src/images/slytherin.png);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
+  background-image: url(/src/images/slytherin.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
 }
-
 
 .raven {
-    background-image: url(/src/images/raven.png);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
+  background-image: url(/src/images/raven.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
 }
 
-
 .huff {
-    background-image: url(/src/images/huff.png);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
+  background-image: url(/src/images/huff.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
 }
