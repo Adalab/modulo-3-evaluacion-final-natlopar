@@ -7,10 +7,15 @@ import huff from '../images/huff.png';
 import raven from '../images/raven.png';
 import slytherin from '../images/slytherin.png';
 import witch from '../images/maga.jpg';
+import MessageCharacter from './MessageCharacter';
 
 function DetailCharacter({ characters }) {
   const { id } = useParams();
   const findCharacter = characters.find((char) => char.id === id);
+  if (!findCharacter) {
+    return <MessageCharacter />;
+  }
+
   const renderImage = () => {
     if (findCharacter.image === '' && findCharacter.gender === 'male') {
       return photo;
@@ -46,8 +51,10 @@ function DetailCharacter({ characters }) {
       return 'huff';
     }
   };
+
   return (
     <section className="detail">
+      {}
       <Link to={'/'} className="detail__link">
         <i className="fa-solid fa-circle-arrow-left detail__link--icon"></i>
       </Link>
@@ -59,7 +66,7 @@ function DetailCharacter({ characters }) {
         />
         <div className="detail__card--total">
           <h3 className="detail__card--title">{findCharacter.name}</h3>
-          <h4 >Species:</h4>
+          <h4>Species:</h4>
           <p className="detail__card--p">{findCharacter.species}</p>
           <h4>Gender:</h4>
           <p className="detail__card--p">{findCharacter.gender}</p>
@@ -73,7 +80,7 @@ function DetailCharacter({ characters }) {
           </h4>
           <div>
             {findCharacter.alternate_names.length > 0 ? (
-              <h4  className="detail__card--text">Alternate names:</h4>
+              <h4 className="detail__card--text">Alternate names:</h4>
             ) : (
               <p></p>
             )}

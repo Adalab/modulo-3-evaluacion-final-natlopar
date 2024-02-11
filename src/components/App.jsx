@@ -36,7 +36,7 @@ function App() {
   const handleGender = (value) => {
     setSearchGender(value);
   };
-  
+
   const filteredCharacters = characters
     .filter((char) =>
       char.name.toLowerCase().includes(searchName.toLowerCase())
@@ -61,7 +61,6 @@ function App() {
         if (nameA > nameB) {
           return 1;
         }
-
         return 0;
       })
     : filteredCharacters;
@@ -89,6 +88,7 @@ function App() {
       </header>
       <main className="bodyApp__main">
         <Routes>
+          <Route path="*" element={<MessageCharacter />} />
           <Route
             path="/"
             element={
@@ -120,7 +120,7 @@ function App() {
             path="/character/:id"
             element={<DetailCharacter characters={characters} />}
           />
-          <Route path="*" element={<MessageCharacter />} />
+         
         </Routes>
       </main>
     </div>

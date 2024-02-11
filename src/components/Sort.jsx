@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 
 function Sort({handleSort, isChecked}) {
   return (
@@ -7,5 +8,10 @@ function Sort({handleSort, isChecked}) {
     </div>
   )
 }
+
+Sort.propTypes = {
+  handleSort: PropTypes.func,
+  isChecked: PropTypes.func,
+};
 
 export default Sort

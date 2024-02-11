@@ -1,12 +1,13 @@
 import { Link } from 'react-router-dom';
+import '../styles/layout/detail.scss';
 
 function MessageCharacter() {
   return (
-    <div className='window'>
-      <Link to={'/'} className="link">
-        <i className="fa-solid fa-circle-arrow-left">Volver</i>
+    <div className="window">
+      <Link to={'/'} className="detail__link">
+        <i className="fa-solid fa-circle-arrow-left detail__link--iconE"></i>
       </Link>
-      <p>This character does not exist</p>
+      <p className="notFound">This character does not exist</p>
     </div>
   );
 }

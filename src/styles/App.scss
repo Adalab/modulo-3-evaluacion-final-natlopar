@@ -1,7 +1,7 @@
 @import 'core/reset';
 .window {
   height: 100vh;
-  width: 100%;
+  width: 100vw;
 }
 .divNotfound {
   width: 100vw;
@@ -14,6 +14,7 @@
   font-weight: bold;
   color: red;
   text-align: center;
+  margin-top: 100px;
 }
 
 .bodyApp {
