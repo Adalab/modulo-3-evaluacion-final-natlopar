@@ -59,8 +59,10 @@ function DetailCharacter({ characters }) {
         />
         <div className="detail__card--total">
           <h3 className="detail__card--title">{findCharacter.name}</h3>
-          <h4 className="detail__card--text">Species:</h4><p>{findCharacter.species}</p>
-          <h4 className="detail__card--text">Gender:</h4> <p>{findCharacter.gender}</p>
+          <h4 >Species:</h4>
+          <p className="detail__card--p">{findCharacter.species}</p>
+          <h4>Gender:</h4>
+          <p className="detail__card--p">{findCharacter.gender}</p>
           <h4 className="detail__card--text">
             Status:{' '}
             {findCharacter.alive ? (
@@ -71,14 +73,14 @@ function DetailCharacter({ characters }) {
           </h4>
           <div>
             {findCharacter.alternate_names.length > 0 ? (
-              <h4>Alternate names:</h4>
+              <h4  className="detail__card--text">Alternate names:</h4>
             ) : (
               <p></p>
             )}
 
             {findCharacter.alternate_names.length > 0 ? (
               findCharacter.alternate_names.map((char, i) => (
-                <p key={i} className="detail__card--text">
+                <p key={i} className="detail__card--p">
                   {char}
                 </p>
               ))
