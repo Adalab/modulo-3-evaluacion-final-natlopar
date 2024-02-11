@@ -26,6 +26,7 @@
   &__header {
     display: flex;
     align-items: center;
+    justify-content: center;
     padding-top: 10px;
 
     @media (min-width: 768px) {
@@ -34,21 +35,26 @@
     }
 
     &--title {
-      width: 250px;
+      width: 230px;
 
       @media (min-width: 768px) {
         width: 400px;
       }
     }
     &--img {
-      width: 100px;
+      width: 40px;
       border-radius: 50%;
       padding: 5px;
+      @media (min-width: 768px) {
+        width: 110px;
+      }
+      @media (min-width: 1024px) {
+        width: 150px;
+      }
     }
   }
   &__main {
     height: 80%;
-    background: rgb(232, 187, 79);
     background: linear-gradient(
       0deg,
       rgba(232, 187, 79, 1) 26%,
@@ -72,18 +78,18 @@ li {
 .input {
   display: flex;
   gap: 5px;
+
  
   &__input{
     padding-left: 5px;
-    width: 160px;
+    width: 140px;
     border: 1px brown solid;
     border-radius: 15px;
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 1.5rem;
     font-weight: 700;
-    @media (min-width: 768px){
-      width: auto;
-    }
+  
+
 
     &:checked {
       accent-color: brown;

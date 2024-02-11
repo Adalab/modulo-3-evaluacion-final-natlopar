@@ -9,7 +9,7 @@ import MessageCharacter from './MessageCharacter';
 import local from '../services/localStorage';
 import title from '../images/title.jpg'
 import back from '../images/back.jpg'
-
+import flag from '../images/banderas.jpg'
 
 
 
@@ -75,6 +75,7 @@ function App() {
   return (
     <div className='bodyApp'>
       <header className='bodyApp__header'>
+        <img src={flag} alt="imagen banderas" className='bodyApp__header--img'/>
         <img src={title} alt ="title" className='bodyApp__header--title' />
         <img src={back} alt="imagen castillo" className='bodyApp__header--img'/>
       </header>
