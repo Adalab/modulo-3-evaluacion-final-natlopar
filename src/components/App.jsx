@@ -43,7 +43,7 @@ function App() {
     char.name.toLowerCase().includes(searchName.toLowerCase())
     )
     .filter((char) => {
-      return searchGender === 'All' ? true : char.gender.toLowerCase().includes(searchGender.toLowerCase())
+      return searchGender === 'All' ? true : char.gender.toLowerCase() === (searchGender.toLowerCase())
 
     }
     )

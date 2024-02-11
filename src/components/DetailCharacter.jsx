@@ -58,20 +58,20 @@ function DetailCharacter({ characters }) {
           alt={`Imagen de ${findCharacter.name}`}
         />
         <div className="detail__card--total">
-          <h3 className="detail__card--titl">{findCharacter.name}</h3>
-          <p className="detail__card--text">Species: {findCharacter.species}</p>
-          <p className="detail__card--text">Gender: {findCharacter.gender}</p>
-          <p className="detail__card--text">
+          <h3 className="detail__card--title">{findCharacter.name}</h3>
+          <h4 className="detail__card--text">Species:</h4><p>{findCharacter.species}</p>
+          <h4 className="detail__card--text">Gender:</h4> <p>{findCharacter.gender}</p>
+          <h4 className="detail__card--text">
             Status:{' '}
             {findCharacter.alive ? (
               <i className="fa-solid fa-heart-pulse heart"></i>
             ) : (
               <i className="fa-solid fa-skull skull"></i>
             )}
-          </p>
+          </h4>
           <div>
             {findCharacter.alternate_names.length > 0 ? (
-              <p>Alternate names:</p>
+              <h4>Alternate names:</h4>
             ) : (
               <p></p>
             )}

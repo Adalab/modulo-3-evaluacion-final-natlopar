@@ -8,16 +8,17 @@ function FilterName({ handleName, searchName }) {
   };
 
   return (
-    <div>
-      <label htmlFor="name">Search by character: </label>
+    <div className='input'>
+      <label htmlFor="name" className='input__label'>Search by character: </label>
       <input
         type="text"
         id="name"
         value={searchName}
-        placeholder="Character"
+        placeholder="Ex: Harry"
         onChange={(e) => handleName(e.target.value)}
         onKeyDown={handleKeyDown}
-        className='input'
+        className='input__input'
+        autoFocus
       />
     </div>
   );

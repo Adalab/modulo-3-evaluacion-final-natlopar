@@ -22,10 +22,11 @@
   align-items: center;
   flex-wrap: wrap;
   width: 100vw;
-
+ 
   &__header {
     display: flex;
     align-items: center;
+    padding-top: 10px;
 
     @media (min-width: 768px) {
       width: 400px;
@@ -69,6 +70,37 @@ li {
 
 
 .input {
-  padding-left: 5px;
-  margin-left: 5px;
+  display: flex;
+  gap: 5px;
+ 
+  &__input{
+    padding-left: 5px;
+    width: 160px;
+    border: 1px brown solid;
+    border-radius: 15px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    @media (min-width: 768px){
+      width: auto;
+    }
+
+    &:checked {
+      accent-color: brown;
+    }
+    &::placeholder{
+      padding: 2px;
+      font-style: italic;
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      font-weight: 100;
+      color: grey;
+      @media (min-width: 768px){
+        font-size: 1.8rem;
+      }
+
+    }
+   
+
+  }
+
 }

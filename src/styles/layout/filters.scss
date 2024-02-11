@@ -4,6 +4,9 @@
   font-size: 1.5rem;
   color: brown;
   font-weight: bold;
+  @media (min-width: 768px){
+    font-size: 1.8rem;
+  }
 
   &__inputs {
     display: flex;
@@ -14,7 +17,7 @@
   &__btn {
     margin: 20px 10px;
     font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 1.5rem;
+    font-size: 1.7rem;
     color: brown;
     font-weight: bold;
     background-color: azure;
@@ -22,5 +25,11 @@
     border: 2px solid rgb(189, 134, 4);
     box-shadow: -4px 4px 5px 0px rgba(0, 0, 0, 0.56);
     border-radius: 15px;
+    cursor: pointer;
+    &:hover {
+        transform: scale(1.1);
+        transition: transform 0.3s ease;
+      }
+
   }
 }

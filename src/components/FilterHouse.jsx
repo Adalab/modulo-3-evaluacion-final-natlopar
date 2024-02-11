@@ -4,13 +4,13 @@ function FilterHouse({handleHouse, searchHouse}) {
 
 
   return (
-    <div>
-    <label htmlFor="houseFilter" className="">Search by house: </label>
-    <select name="houseFilter" id="houseFilter" className="input" value={searchHouse} onChange={(e) => handleHouse(e.target.value)}>
-        <option value='Gryffindor'>Gryffindor</option>
-        <option value="Slytherin">Slytherin</option>
+    <div className='input'>
+    <label htmlFor="houseFilter" className="input__label">Search by house: </label>
+    <select name="houseFilter" id="houseFilter" className="input__input" value={searchHouse} onChange={(e) => handleHouse(e.target.value)}>
+        <option value='Gryffindor' >Gryffindor</option>
+        <option value="Slytherin" >Slytherin</option>
         <option value="Hufflepuff">Hufflepuff</option>
-        <option value="Ravenclaw">Ravenclaw</option>
+        <option value="Ravenclaw" >Ravenclaw</option>
     </select>
     </div>
   )
