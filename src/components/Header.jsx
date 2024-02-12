@@ -8,7 +8,7 @@ function Header() {
     <header className="bodyApp__header">
       <img src={flag} alt="imagen banderas" className="bodyApp__header--img" />
       <Link to={'/'} className="detail__link">
-        <img src={title} alt="title" className="bodyApp__header--title" />
+        <img src={title} alt="title" className="bodyApp__header--title slide-in-elliptic-top-fwd" />
       </Link>
       <img src={back} alt="imagen castillo" className="bodyApp__header--img" />
     </header>

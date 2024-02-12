@@ -59,7 +59,7 @@ function DetailCharacter({ characters }) {
       </Link>
       <article className={`detail__card ${classBackground()}`}>
         <img
-          className="detail__card--img"
+          className="detail__card--img swirl-in-fwd"
           src={renderImage()}
           alt={`Imagen de ${findCharacter.name}`}
         />
