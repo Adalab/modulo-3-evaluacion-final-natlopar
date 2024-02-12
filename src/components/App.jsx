@@ -75,7 +75,7 @@ function App() {
       <Header />
       <main className="bodyApp__main">
         <Routes>
-          <Route path="*" element={<MessageCharacter />} />
+          <Route path="/*" element={<MessageCharacter />} />
           <Route
             path="/"
             element={
