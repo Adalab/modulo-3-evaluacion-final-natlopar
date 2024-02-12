@@ -54,7 +54,6 @@ function DetailCharacter({ characters }) {
 
   return (
     <section className="detail">
-      {}
       <Link to={'/'} className="detail__link">
         <i className="fa-solid fa-circle-arrow-left detail__link--icon"></i>
       </Link>

@@ -4,7 +4,7 @@
   gap: 20px;
   align-items: center;
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   margin-top: 50px;
 
   &__link {
@@ -32,6 +32,7 @@
     font-size: 1.8rem;
     font-family: Georgia, 'Times New Roman', Times, serif;
     gap: 50px;
+    margin-bottom: 100px;
 
     &--house {
       width: 30px;
