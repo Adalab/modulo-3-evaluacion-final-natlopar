@@ -155,7 +155,7 @@ Muchas gracias por el tiempo dedicado!
 
 ## Autora  👩
 
-![Autor](https://img.shields.io/badge/-%20Natalia%20López%20-%20?logo=github&labelColor=black&color=purple)(https://github.com/natlopar)
-
+[![Autor](https://img.shields.io/badge/-%20Natalia%20López%20-%20?logo=github&labelColor=black&color=purple)](
+https://github.com/natlopar)
 
 
