@@ -79,10 +79,24 @@ Además de implentar los detalles, mejoras y bonus propuestos, he decidido añad
 Es un proyecto desarrollado con Sass y con diseño responsive:
 
 
+
 **Mobile**
+
+
+
 ![Buscador de personajes Harry Potter mobile](./src/images/screenshotmobile.png)
+
+
+
+
 **Tablet**
+
+
+
+
 ![Buscador de series Anime](./src/images/detail.png)
+
+
 
 
 ## Guía de uso rápido ✔️
