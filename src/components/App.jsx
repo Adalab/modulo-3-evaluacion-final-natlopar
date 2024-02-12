@@ -7,9 +7,8 @@ import { useEffect, useState } from 'react';
 import '../styles/App.scss';
 import MessageCharacter from './MessageCharacter';
 import local from '../services/localStorage';
-import title from '../images/title.jpg';
-import back from '../images/back.jpg';
-import flag from '../images/banderas.jpg';
+import Header from './Header';
+import Footer from './Footer';
 
 function App() {
   const [characters, setCharacters] = useState(local.get('characters', []));
@@ -73,19 +72,7 @@ function App() {
   };
   return (
     <div className="bodyApp">
-      <header className="bodyApp__header">
-        <img
-          src={flag}
-          alt="imagen banderas"
-          className="bodyApp__header--img"
-        />
-        <img src={title} alt="title" className="bodyApp__header--title" />
-        <img
-          src={back}
-          alt="imagen castillo"
-          className="bodyApp__header--img"
-        />
-      </header>
+      <Header />
       <main className="bodyApp__main">
         <Routes>
           <Route path="*" element={<MessageCharacter />} />
@@ -123,6 +110,7 @@ function App() {
          
         </Routes>
       </main>
+      <Footer/>
     </div>
   );
 }

@@ -62,6 +62,7 @@ Además de implentar los detalles, mejoras y bonus propuestos, he decidido añad
 - Al añadir una **imagen por defecto** cuando obtenemos un personaje sin imagen, que esta sea diferente **en función del género** del mismo.
 - La funcionalidad de **ordenar alfabéticamente** se ejecuta al al hacer click en un selector de tipo **checkbox**.
 - El **background** de cada personaje, dentro de su página de detalle, se corresponde con el **emblema** de su casa.
+- El título del header es un Link para que al hacer clic en él se pueda volver a la ruta principal.
 
 ## Tecnologías usadas ⚛️
 
