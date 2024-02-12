@@ -1,9 +1,9 @@
 .form {
-  width: 100%;
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-size: 1.5rem;
   color: brown;
   font-weight: bold;
+  
   @media (min-width: 768px) {
     font-size: 1.8rem;
   }
